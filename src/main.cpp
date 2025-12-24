@@ -7,7 +7,7 @@
 using namespace std;
 
 int main() {
-    Logger::Info("REPS: An Open Source Growtopia Private Server");
+    Logger::Info("REPS: An Open Source Growtopia Private Server!");
     REPS::Server::Initialize(17095);
     REPS::Server::HandleServer();
     return 0;
