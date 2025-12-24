@@ -1,4 +1,4 @@
-project(REPS LANGUAGES CXX)
+project(REPS)
 
 file(GLOB_RECURSE INCLUDE_FILES
     *.h
@@ -37,7 +37,6 @@ target_link_libraries(${PROJECT_NAME} PUBLIC fmt::fmt)
 target_compile_definitions(${PROJECT_NAME} PRIVATE
     NOMINMAX
     WIN32_LEAN_AND_MEAN
-    # CPPHTTPLIB_OPENSSL_SUPPORT
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
