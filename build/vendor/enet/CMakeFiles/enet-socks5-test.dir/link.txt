@@ -1,0 +1,1 @@
+/usr/bin/cc "CMakeFiles/enet-socks5-test.dir/test.c.o" -o enet-socks5-test  enet/libenet.a

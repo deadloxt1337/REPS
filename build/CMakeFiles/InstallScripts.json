@@ -1,0 +1,12 @@
+{
+	"InstallScripts" : 
+	[
+		"/root/REPS/build/cmake_install.cmake",
+		"/root/REPS/build/src/cmake_install.cmake",
+		"/root/REPS/build/vendor/cmake_install.cmake",
+		"/root/REPS/build/vendor/enet/cmake_install.cmake",
+		"/root/REPS/build/vendor/enet/enet/cmake_install.cmake",
+		"/root/REPS/build/vendor/fmt/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
