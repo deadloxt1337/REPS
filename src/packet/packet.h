@@ -6,6 +6,6 @@ using namespace std;
 
 namespace REPS {
     namespace PacketDecoder {
-        std::string DataToString(const uint8_t* data, uint32_t len);
+        string DataToString(uint8_t* data, uint32_t data_len);
     }
 }

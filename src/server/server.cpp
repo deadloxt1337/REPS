@@ -5,10 +5,12 @@
 ENetHost* server;
 using namespace std;
 
-uint8_t GetMessage(const ENetPacket* packet) {
-    if (!packet || packet->dataLength < 1)
-        return 0;
-    return packet->data[0]; 
+
+int GetMessage(ENetPacket* packet) {
+   	if (packet->dataLength > 3u) {
+  		return *(packet->data);
+   	}
+   	return 0;
 }
 
 namespace REPS {
@@ -35,8 +37,7 @@ namespace REPS {
             Logger::Info("Server initialized and running on port: {}", port);
 
             ENetEvent event;
-            //int ret = enet_host_service(server, &event, 1000);
-            //Logger::Info("enet_host_service returned: {}", ret);
+
         }
 
         void HandleServer() {
@@ -52,9 +53,9 @@ namespace REPS {
                             Logger::Info("A new client connected from {}",
                                          client_ip);
 
-                            Logger::Info("A new client connected from {}:{}",
+                            /*Logger::Info("A new client connected from {}:{}",
                                          event.peer->address.host,
-                                         event.peer->address.port);
+                                         event.peer->address.port);*/
                             break;
                         case ENET_EVENT_TYPE_RECEIVE:
                             if (GetMessage(event.packet) == 2 or GetMessage(event.packet) == 3) {

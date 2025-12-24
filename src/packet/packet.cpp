@@ -6,10 +6,11 @@ using namespace std;
 
 namespace REPS {
     namespace PacketDecoder {
-        std::string DataToString(const uint8_t* data, uint32_t len) {
-            if (!data || len == 0)
-                return {};
-            return std::string(reinterpret_cast<const char*>(data), len);
+        string DataToString(uint8_t* data, uint32_t data_len) {
+            std::string ret{};
+            ret.resize(data_len - 1);
+            std::memcpy((void*)ret.data(), data, data_len - 1);
+            return ret;
         }
     }
 }
