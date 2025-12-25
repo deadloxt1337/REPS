@@ -30,8 +30,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     CXX_STANDARD_REQUIRED ON
 )
 
-find_package(fmt REQUIRED)
-
 target_link_libraries(${PROJECT_NAME} PUBLIC fmt::fmt)
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
