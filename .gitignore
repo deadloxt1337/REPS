@@ -1,2 +1,9 @@
 build/
-data/
+data/REPS
+
+*.o
+*.d
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+MakeFile
