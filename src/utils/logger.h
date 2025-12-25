@@ -36,6 +36,15 @@ static void Warn(const std::string& format, Args&&... args) {
 }
 
 template <typename... Args>
+static void Action(const std::string& format, Args&&... args) {
+    auto now = std::chrono::system_clock::now();
+    auto in_time_t = std::chrono::system_clock::to_time_t(now);
+
+    fmt::print("{}{}{} {}\n", fmt::format(fmt::fg(fmt::color::dark_gray), "["), fmt::format(fmt::fg(fmt::color::yellow), "ACTION"), fmt::format(fmt::fg(fmt::color::dark_gray), "]"),
+               fmt::format(fmt::runtime(format), std::forward<Args>(args)...));
+}
+
+template <typename... Args>
 static void Error(const std::string& format, Args&&... args) {
     auto now = std::chrono::system_clock::now();
     auto in_time_t = std::chrono::system_clock::to_time_t(now);
